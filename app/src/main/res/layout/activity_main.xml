@@ -13,7 +13,7 @@
         android:id="@+id/news_search_box"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter source as the-next-web"
+        android:hint="Enter a source to display news"
         android:textSize="18sp" />
     <TextView
         android:id="@+id/news_url_display"
