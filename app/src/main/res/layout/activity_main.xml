@@ -15,6 +15,12 @@
         android:layout_height="wrap_content"
         android:hint="Enter a source to display news"
         android:textSize="18sp" />
+    <ProgressBar
+        android:id="@+id/pb_loading_indicator"
+        android:layout_height="42dp"
+        android:layout_width="42dp"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone" />
     <TextView
         android:id="@+id/news_url_display"
         android:layout_width="wrap_content"
@@ -44,13 +50,10 @@
             android:padding="16dp"
             android:text="@string/error_message"
             android:textColor="@color/colorError"
-            android:visibility="invisible" />
-        <ProgressBar
-            android:id="@+id/pb_loading_indicator"
-            android:layout_height="42dp"
-            android:layout_width="42dp"
-            android:layout_gravity="center"
-            android:visibility="invisible" />
+            android:visibility="invisible"
+            android:layout_gravity="center_horizontal"/>
+
+
     </FrameLayout>
 
 </LinearLayout>

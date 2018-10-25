@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         }
         @Override
         protected void onPostExecute(String newsSearchResults) {
-            mLoadingIndicator.setVisibility(View.INVISIBLE);
+            mLoadingIndicator.setVisibility(View.GONE);
             if (newsSearchResults != null && !newsSearchResults.equals("")) {
                 showJsonDataView();
                 mNewsSearchResultsJson.setText(newsSearchResults);
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemThatWasClickedId = item.getItemId();
-        if (itemThatWasClickedId == R.id.action_search) {
+        if (itemThatWasClickedId == R.id.action_get_news) {
             makeNewsSearchQuery();
             return true;
         }
