@@ -5,7 +5,7 @@
         android:id="@+id/action_get_news"
         android:orderInCategory="1"
         android:title="@string/getnews"
-        app:showAsAction="always" />
+        app:showAsAction="always"/>
 
 
 </menu>

@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mNewsSearchBox = (EditText) findViewById(R.id.news_search_box);
         mNewsUrlDisplay = (TextView) findViewById(R.id.news_url_display);
         mNewsSearchResultsJson = (TextView) findViewById(R.id.news_search_results_json);
         mErrorMessageDisplay = (TextView) findViewById(R.id.news_error_message_display);
@@ -35,8 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     private void makeNewsSearchQuery() {
-        String newsQuery = mNewsSearchBox.getText().toString();
-        URL newsSearchUrl = NetworkUtils.buildUrl(newsQuery);
+        URL newsSearchUrl = NetworkUtils.buildUrl();
         mNewsUrlDisplay.setText(newsSearchUrl.toString());
         new NewsQueryTask().execute(newsSearchUrl);
 
