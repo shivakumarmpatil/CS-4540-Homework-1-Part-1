@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">News App</string>
-    <string name="getnews">Get News</string>
-    <string name="error_message">No results to display</string>
+    <string name="getnews">Refresh</string>
 </resources>

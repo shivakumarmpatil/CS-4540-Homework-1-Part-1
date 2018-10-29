@@ -24,14 +24,14 @@ public class NetworkUtils {
                 .appendQueryParameter(PARAM_APIKEY, apiKey)
                 .build();
 
-        URL url = null;
+        URL buildURL = null;
         try {
-            url = new URL(builtUri.toString());
+            buildURL = new URL(builtUri.toString());
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
 
-        return url;
+        return buildURL;
     }
     public static String getResponseFromHttpUrl(URL url) throws IOException {
         HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();

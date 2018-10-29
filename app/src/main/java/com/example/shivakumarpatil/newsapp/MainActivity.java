@@ -18,10 +18,8 @@ import java.io.IOException;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText mNewsSearchBox;
     private TextView mNewsUrlDisplay;
     private TextView mNewsSearchResultsJson;
-    private TextView mErrorMessageDisplay;
     private ProgressBar mLoadingIndicator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mNewsUrlDisplay = (TextView) findViewById(R.id.news_url_display);
         mNewsSearchResultsJson = (TextView) findViewById(R.id.news_search_results_json);
-        mErrorMessageDisplay = (TextView) findViewById(R.id.news_error_message_display);
         mLoadingIndicator = (ProgressBar) findViewById(R.id.pb_loading_indicator);
 
     }
@@ -38,16 +35,6 @@ public class MainActivity extends AppCompatActivity {
         mNewsUrlDisplay.setText(newsSearchUrl.toString());
         new NewsQueryTask().execute(newsSearchUrl);
 
-    }
-    private void showJsonDataView()
-    {
-        mErrorMessageDisplay.setVisibility(View.INVISIBLE);
-        mNewsSearchResultsJson.setVisibility(View.VISIBLE);
-    }
-    private void showErrorMessage()
-    {
-        mNewsSearchResultsJson.setVisibility(View.INVISIBLE);
-        mErrorMessageDisplay.setVisibility(View.VISIBLE);
     }
 
     public class NewsQueryTask extends AsyncTask<URL, Void, String>
@@ -73,12 +60,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String newsSearchResults) {
             mLoadingIndicator.setVisibility(View.GONE);
             if (newsSearchResults != null && !newsSearchResults.equals("")) {
-                showJsonDataView();
                 mNewsSearchResultsJson.setText(newsSearchResults);
-            }
-            else
-            {
-                showErrorMessage();
             }
         }
 
@@ -92,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemThatWasClickedId = item.getItemId();
-        if (itemThatWasClickedId == R.id.action_get_news) {
+        if (itemThatWasClickedId == R.id.get_news) {
             makeNewsSearchQuery();
             return true;
         }

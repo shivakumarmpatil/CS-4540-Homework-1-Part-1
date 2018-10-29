@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Click GET NEWS and your URL will show up here!"
+        android:text="Click REFRESH and your URL will show up here!"
         android:textSize="22sp" />
     <FrameLayout
         android:layout_width="match_parent"
@@ -37,17 +37,6 @@
                 android:text="Your results will show up here!"
                 android:textSize="18sp" />
         </ScrollView>
-        <TextView
-            android:id="@+id/news_error_message_display"
-            android:textSize="22sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:text="@string/error_message"
-            android:textColor="@color/colorError"
-            android:visibility="invisible"
-            android:layout_gravity="center_horizontal"/>
-
 
     </FrameLayout>
 
